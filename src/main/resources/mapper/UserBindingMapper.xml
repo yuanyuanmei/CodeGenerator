@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dm.login.dao.UserBindingDao">
+    <resultMap id="BaseMap" type="com.dm.login.bean.UserBinding">
+        <result property="id" column="id" />
+        <result property="usrId" column="usr_id" />
+        <result property="oauthId" column="oauth_id" />
+        <result property="openid" column="openid" />
+        <result property="openname" column="openname" />
+        <result property="unionId" column="union_id" />
+        <result property="lastLoginIp" column="last_login_ip" />
+        <result property="lastLoginTime" column="last_login_time" />
+        <result property="createTime" column="create_time" />
+    </resultMap>
+
+    <sql id="BaseColumns">
+        id,usr_id,oauth_id,openid,openname,union_id,last_login_ip,last_login_time,create_time
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseMap" parameterType="java.lang.Integer">
+        select
+        <include refid="BaseColumns"/>
+        from user_binding
+        <where>
+            id = #{id}
+        </where>
+    </select>
+
+    <select id="list" resultMap="BaseMap" parameterType="com.dm.login.bean.UserBinding">
+        select
+        <include refid="BaseColumns"/>
+        from user_binding
+    </select>
+
+    <insert id="insert" parameterType="com.dm.login.bean.UserBinding" keyProperty="id" useGeneratedKeys="true">
+        insert into user_binding
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null">
+                id,
+            </if>
+            <if test="usrId != null">
+                usr_id,
+            </if>
+            <if test="oauthId != null">
+                oauth_id,
+            </if>
+            <if test="openid != null">
+                openid,
+            </if>
+            <if test="openname != null">
+                openname,
+            </if>
+            <if test="unionId != null">
+                union_id,
+            </if>
+            <if test="lastLoginIp != null">
+                last_login_ip,
+            </if>
+            <if test="lastLoginTime != null">
+                last_login_time,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="usrId != null">
+                #{usrId},
+            </if>
+            <if test="oauthId != null">
+                #{oauthId},
+            </if>
+            <if test="openid != null">
+                #{openid},
+            </if>
+            <if test="openname != null">
+                #{openname},
+            </if>
+            <if test="unionId != null">
+                #{unionId},
+            </if>
+            <if test="lastLoginIp != null">
+                #{lastLoginIp},
+            </if>
+            <if test="lastLoginTime != null">
+                #{lastLoginTime},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="com.dm.login.bean.UserBinding">
+        update user_binding
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="usrId != null">
+                usr_id = #{usrId},
+            </if>
+            <if test="oauthId != null">
+                oauth_id = #{oauthId},
+            </if>
+            <if test="openid != null">
+                openid = #{openid},
+            </if>
+            <if test="openname != null">
+                openname = #{openname},
+            </if>
+            <if test="unionId != null">
+                union_id = #{unionId},
+            </if>
+            <if test="lastLoginIp != null">
+                last_login_ip = #{lastLoginIp},
+            </if>
+            <if test="lastLoginTime != null">
+                last_login_time = #{lastLoginTime},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="delete" parameterType="java.lang.Integer">
+        update user_binding set is_delete = 2
+        <where>
+            id = #{id}
+        </where>
+    </update>
+</mapper>

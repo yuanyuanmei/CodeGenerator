@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dm.login.dao.UserPersonalDao">
+    <resultMap id="BaseMap" type="com.dm.login.bean.UserPersonal">
+        <result property="id" column="id" />
+        <result property="usrId" column="usr_id" />
+        <result property="name" column="name" />
+        <result property="sex" column="sex" />
+        <result property="birth" column="birth" />
+        <result property="school" column="school" />
+        <result property="education" column="education" />
+        <result property="nativePlace" column="native_place" />
+        <result property="nowIn" column="now_in" />
+        <result property="intentionJob" column="intention_job" />
+        <result property="
+intentionArea" column="
+intention_area" />
+        <result property="
+intentionSalary" column="
+intention_salary" />
+        <result property="introduce" column="introduce" />
+        <result property="companyName" column="company_name" />
+        <result property="position" column="position" />
+        <result property="jobDescription" column="job_description" />
+        <result property="jobSalary" column="job_salary" />
+        <result property="jobTime" column="job_time" />
+    </resultMap>
+
+    <sql id="BaseColumns">
+        id,usr_id,name,sex,birth,school,education,native_place,now_in,intention_job,
+intention_area,
+intention_salary,introduce,company_name,position,job_description,job_salary,job_time
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseMap" parameterType="java.lang.Integer">
+        select
+        <include refid="BaseColumns"/>
+        from user_personal
+        <where>
+            id = #{id}
+        </where>
+    </select>
+
+    <select id="list" resultMap="BaseMap" parameterType="com.dm.login.bean.UserPersonal">
+        select
+        <include refid="BaseColumns"/>
+        from user_personal
+    </select>
+
+    <insert id="insert" parameterType="com.dm.login.bean.UserPersonal" keyProperty="id" useGeneratedKeys="true">
+        insert into user_personal
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null">
+                id,
+            </if>
+            <if test="usrId != null">
+                usr_id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="birth != null">
+                birth,
+            </if>
+            <if test="school != null">
+                school,
+            </if>
+            <if test="education != null">
+                education,
+            </if>
+            <if test="nativePlace != null">
+                native_place,
+            </if>
+            <if test="nowIn != null">
+                now_in,
+            </if>
+            <if test="intentionJob != null">
+                intention_job,
+            </if>
+            <if test="
+intentionArea != null">
+                
+intention_area,
+            </if>
+            <if test="
+intentionSalary != null">
+                
+intention_salary,
+            </if>
+            <if test="introduce != null">
+                introduce,
+            </if>
+            <if test="companyName != null">
+                company_name,
+            </if>
+            <if test="position != null">
+                position,
+            </if>
+            <if test="jobDescription != null">
+                job_description,
+            </if>
+            <if test="jobSalary != null">
+                job_salary,
+            </if>
+            <if test="jobTime != null">
+                job_time,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="usrId != null">
+                #{usrId},
+            </if>
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="sex != null">
+                #{sex},
+            </if>
+            <if test="birth != null">
+                #{birth},
+            </if>
+            <if test="school != null">
+                #{school},
+            </if>
+            <if test="education != null">
+                #{education},
+            </if>
+            <if test="nativePlace != null">
+                #{nativePlace},
+            </if>
+            <if test="nowIn != null">
+                #{nowIn},
+            </if>
+            <if test="intentionJob != null">
+                #{intentionJob},
+            </if>
+            <if test="
+intentionArea != null">
+                #{
+intentionArea},
+            </if>
+            <if test="
+intentionSalary != null">
+                #{
+intentionSalary},
+            </if>
+            <if test="introduce != null">
+                #{introduce},
+            </if>
+            <if test="companyName != null">
+                #{companyName},
+            </if>
+            <if test="position != null">
+                #{position},
+            </if>
+            <if test="jobDescription != null">
+                #{jobDescription},
+            </if>
+            <if test="jobSalary != null">
+                #{jobSalary},
+            </if>
+            <if test="jobTime != null">
+                #{jobTime},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="com.dm.login.bean.UserPersonal">
+        update user_personal
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="usrId != null">
+                usr_id = #{usrId},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="birth != null">
+                birth = #{birth},
+            </if>
+            <if test="school != null">
+                school = #{school},
+            </if>
+            <if test="education != null">
+                education = #{education},
+            </if>
+            <if test="nativePlace != null">
+                native_place = #{nativePlace},
+            </if>
+            <if test="nowIn != null">
+                now_in = #{nowIn},
+            </if>
+            <if test="intentionJob != null">
+                intention_job = #{intentionJob},
+            </if>
+            <if test="
+intentionArea != null">
+                
+intention_area = #{
+intentionArea},
+            </if>
+            <if test="
+intentionSalary != null">
+                
+intention_salary = #{
+intentionSalary},
+            </if>
+            <if test="introduce != null">
+                introduce = #{introduce},
+            </if>
+            <if test="companyName != null">
+                company_name = #{companyName},
+            </if>
+            <if test="position != null">
+                position = #{position},
+            </if>
+            <if test="jobDescription != null">
+                job_description = #{jobDescription},
+            </if>
+            <if test="jobSalary != null">
+                job_salary = #{jobSalary},
+            </if>
+            <if test="jobTime != null">
+                job_time = #{jobTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="delete" parameterType="java.lang.Integer">
+        update user_personal set is_delete = 2
+        <where>
+            id = #{id}
+        </where>
+    </update>
+</mapper>
