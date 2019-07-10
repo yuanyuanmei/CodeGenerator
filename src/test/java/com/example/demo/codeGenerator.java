@@ -17,7 +17,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @Component
 @PropertySource("classpath:jdbc.properties")
 @SpringBootTest
-@RunWith(SpringJUnit4ClassRunner.class)
 @Slf4j
 public class codeGenerator {
 
@@ -31,7 +30,7 @@ public class codeGenerator {
      * 数据库Url
      */
     //@Value("${url}")
-    private String url = "jdbc:mysql://localhost:3306/account_system?useUnicode=true&characterEncoding=UTF-8";
+    private String url = "jdbc:mysql://localhost:3306/codeTest?useUnicode=true&characterEncoding=UTF-8";
 
     /**
      * 账号
@@ -43,12 +42,12 @@ public class codeGenerator {
      * 密码
      */
     //@Value("${password}")
-    private String password = "sa";
+    private String password = "qq137042696";
 
     /**
      * 数据库名称
      */
-    private String databaseName = "account_system";
+    private String databaseName = "codeTest";
 
     /**
      * 表名（非必需）
@@ -68,34 +67,34 @@ public class codeGenerator {
      */
     private int genneratorLevel = 1;
 
-    private String packageName = "com.dm.login";
+    private String basePackage = "com.dm.example";
 
     /**
      * 实体类包名
      */
-    private String beanPackage= packageName+".bean";
+    private String beanPackage= ".bean";
 
     /**
      * dao接口包名 无则使用基本包名
      */
-    private String daoPackage = packageName+".dao";
+    private String daoPackage = ".dao";
 
     /**
      * mapper.xml 生成路径 无则使用基本包名
      */
-    private String xmlDir = "mapper";
+    private String xmlDir = ".mapper";
 
     /**
      * servcie包名 impl也在此包路径下 无则使用基本包名
      */
-    private String servicePackage = packageName+".service";
+    private String servicePackage = ".service";
 
-    private String serviceImplPackage = packageName+".service.impl";
+    private String serviceImplPackage = ".service.impl";
 
     /**
      * controller包名 无则使用基本包名
      */
-    private String controllerPackage = packageName+".controller";
+    private String controllerPackage = ".controller";
 
 
     @Test
@@ -115,7 +114,7 @@ public class codeGenerator {
                 servicePackage,
                 serviceImplPackage,
                 controllerPackage,
-                packageName
+                basePackage
         );
     }
 

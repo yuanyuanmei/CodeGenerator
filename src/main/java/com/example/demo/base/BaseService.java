@@ -8,15 +8,15 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 public interface BaseService<T> {
-    JSONObject selectByPrimaryKey(Integer id);
+    T selectByPrimaryKey(Integer id);
 
-    JSONObject delete(Integer id);
+    int delete(Integer id);
 
-    JSONObject insert(T t);
+    int insert(T t);
 
-    JSONObject update(T t);
+    int update(T t);
 
-    JSONObject list(T t);
+    List<T> list(T t);
 
-    JSONObject getCount(T t);
+    int getCount(T t);
 }

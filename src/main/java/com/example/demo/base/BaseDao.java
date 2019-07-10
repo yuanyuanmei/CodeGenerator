@@ -6,11 +6,11 @@ public interface BaseDao<T> {
 
     T selectByPrimaryKey(Integer id);
 
-    Integer delete(Integer id);
+    int delete(Integer id);
 
-    Integer insert(T t);
+    int insert(T t);
 
-    Integer update(T t);
+    int update(T t);
 
     List<T> list(T t);
 

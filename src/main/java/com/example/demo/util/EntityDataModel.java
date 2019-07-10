@@ -18,7 +18,7 @@ public class EntityDataModel {
     /**
      * base package
      */
-    private String entityPackage;
+    private String basePackage = "com.dm.example";
     /**
      * 文件名后缀
      */
@@ -32,7 +32,7 @@ public class EntityDataModel {
     /**
      * 作者 默认
      */
-    private String author="auto generator";
+    private String author="WangGM";
 
     /**
      * 创建时间
