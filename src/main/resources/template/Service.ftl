@@ -1,18 +1,7 @@
-package ${packageName}.service;
+package ${basePackage}.service;
 
-import ${packageName}.bean.${entityName};
-import com.alibaba.fastjson.JSONObject;
+import ${basePackage}.bean.${entityName};
 
-public interface ${entityName}Service{
-    JSONObject selectByPrimaryKey(Integer id);
+public interface ${entityName}Service extends BaseService<${entityName}>{
 
-    JSONObject delete(Integer id);
-
-    JSONObject insert(${entityName} t);
-
-    JSONObject update(${entityName} t);
-
-    JSONObject list(${entityName} t);
-
-    JSONObject getCount(${entityName} t);
 }
