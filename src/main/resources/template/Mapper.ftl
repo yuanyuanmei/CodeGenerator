@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="${packageName}.dao.${entityName}Dao">
-    <resultMap id="BaseMap" type="${entityPackage}.${entityName}">
-        <#list columns as column>
-        <result property="${column.beanName}" column="${column.name}" />
-        </#list>
+<mapper namespace="${basePackage}.dao.${entityName}Dao">
+    <resultMap id="BaseMap" type="${basePackage}.bean.${entityName}">
     </resultMap>
 
     <sql id="BaseColumns">
@@ -21,13 +18,13 @@
         </where>
     </select>
 
-    <select id="list" resultMap="BaseMap" parameterType="${entityPackage}.${entityName}">
+    <select id="list" resultMap="BaseMap" parameterType="${entityName}">
         select
         <include refid="BaseColumns"/>
         from ${tableName}
     </select>
 
-    <insert id="insert" parameterType="${entityPackage}.${entityName}" keyProperty="id" useGeneratedKeys="true">
+    <insert id="insert" parameterType="${entityName}" keyProperty="id" useGeneratedKeys="true">
         insert into ${tableName}
         <trim prefix="(" suffix=")" suffixOverrides="," >
         <#list columns as column>
@@ -46,7 +43,7 @@
         </trim>
     </insert>
 
-    <update id="update" parameterType="${entityPackage}.${entityName}">
+    <update id="update" parameterType="${entityName}">
         update ${tableName}
         <set>
             <#list columns as column>
@@ -58,7 +55,7 @@
         where id = <#noparse>#</#noparse>{id}
     </update>
 
-    <update id="delete" parameterType="java.lang.Integer">
+    <update id="delete" parameterType="java.lang.Long">
         update ${tableName} set is_delete = 2
         <where>
             id = <#noparse>#</#noparse>{id}
