@@ -1,7 +1,7 @@
-package ${packageName}.dao;
+package ${basePackage}.dao;
 
-import ${packageName}.base.BaseDao;
-import ${packageName}.bean.${entityName};
+import ${basePackage}.base.BaseDao;
+import ${basePackage}.bean.${entityName};
 
 public interface ${entityName}Dao extends BaseDao<${entityName}> {
 
