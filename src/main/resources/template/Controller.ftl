@@ -1,6 +1,6 @@
-package ${packageName}.controller;
-import ${packageName}.bean.${entityName};
-import ${packageName}.service.${entityName}Service;
+package ${basePackage}.controller;
+import ${basePackage}.bean.${entityName};
+import ${basePackage}.service.${entityName}Service;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
