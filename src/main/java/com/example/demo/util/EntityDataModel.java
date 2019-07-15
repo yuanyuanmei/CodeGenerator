@@ -1,9 +1,6 @@
-package com.example.demo.util;
+package generator.example.demo.util;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import java.util.Date;
 import java.util.List;
@@ -11,14 +8,14 @@ import java.util.List;
 @Data
 public class EntityDataModel {
 
-    /**
-     * packgaeName
-     */
-    private String packageName;
+//    /**
+//     * packgaeName
+//     */
+//    private String packageName;
     /**
      * base package
      */
-    private String basePackage = "com.dm.example";
+    private String basePackage;
     /**
      * 文件名后缀
      */
