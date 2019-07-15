@@ -1,18 +1,14 @@
-package com.example.demo;
+package generator.example.demo;
 
-import com.example.demo.util.FreeMarkerGeneratorUtil;
+import generator.example.demo.util.FreeMarkerGeneratorUtil;
+import freemarker.template.TemplateException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.io.IOException;
 
 @Component
 @PropertySource("classpath:jdbc.properties")
@@ -30,7 +26,7 @@ public class codeGenerator {
      * 数据库Url
      */
     //@Value("${url}")
-    private String url = "jdbc:mysql://localhost:3306/codeTest?useUnicode=true&characterEncoding=UTF-8";
+    private String url = "jdbc:mysql://192.168.60.205/questionnaire?useUnicode=true&characterEncoding=UTF-8";
 
     /**
      * 账号
@@ -42,17 +38,17 @@ public class codeGenerator {
      * 密码
      */
     //@Value("${password}")
-    private String password = "qq137042696";
+    private String password = "123456";
 
     /**
      * 数据库名称
      */
-    private String databaseName = "codeTest";
+    private String databaseName = "questionnaire";
 
     /**
      * 表名（非必需）
      */
-    private String tableName = "";
+    private String tableName = "admin";
 
     /**
      * 表前缀
@@ -98,7 +94,7 @@ public class codeGenerator {
 
 
     @Test
-    public void freeMarkerTest() {
+    public void freeMarkerTest() throws IOException, TemplateException {
         FreeMarkerGeneratorUtil.generatorMvcCode(
                 driverClassName,
                 url,
@@ -107,7 +103,6 @@ public class codeGenerator {
                 tableName,
                 databaseName,
                 tablePrefix,
-                genneratorLevel,
                 beanPackage,
                 daoPackage,
                 xmlDir,
