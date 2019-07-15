@@ -1,4 +1,4 @@
-package generator.example.demo.util;
+package gennerator.example.demo.util;
 
 import lombok.Data;
 
@@ -8,10 +8,6 @@ import java.util.List;
 @Data
 public class EntityDataModel {
 
-//    /**
-//     * packgaeName
-//     */
-//    private String packageName;
     /**
      * base package
      */

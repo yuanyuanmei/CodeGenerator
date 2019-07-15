@@ -1,4 +1,4 @@
-package com.example.demo.util;
+package gennerator.example.demo.util;
 
 import cn.hutool.core.util.StrUtil;
 import lombok.AllArgsConstructor;

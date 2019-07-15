@@ -1,4 +1,4 @@
-package generator.example.demo.util;
+package gennerator.example.demo.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

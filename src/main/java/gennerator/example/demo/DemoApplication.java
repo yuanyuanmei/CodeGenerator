@@ -1,4 +1,4 @@
-package com.example.demo;
+package gennerator.example.demo;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

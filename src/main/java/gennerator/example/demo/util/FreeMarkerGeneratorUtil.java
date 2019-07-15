@@ -1,4 +1,4 @@
-package generator.example.demo.util;
+package gennerator.example.demo.util;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
@@ -31,8 +31,7 @@ public class FreeMarkerGeneratorUtil {
     private final static String templatePath = path + "/src/main/resources/template";
 
     /**
-     * 生成三层代码 包含 仅生成dao层 （包含实体Entity及mapper接口及xml） 生成service层 （包含service接口及impl） 生成controller层
-     *
+     * 主方法
      * @param driver
      * @param url
      * @param user

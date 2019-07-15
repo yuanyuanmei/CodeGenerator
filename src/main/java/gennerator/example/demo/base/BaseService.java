@@ -1,4 +1,4 @@
-package com.example.demo.base;
+package gennerator.example.demo.base;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

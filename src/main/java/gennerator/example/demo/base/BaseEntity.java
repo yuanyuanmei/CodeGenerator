@@ -1,4 +1,4 @@
-package com.example.demo.base;
+package gennerator.example.demo.base;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
