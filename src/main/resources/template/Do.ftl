@@ -1,6 +1,6 @@
-package ${entityPackage};
+package ${basePackage}.bean;
 
-import ${packageName}.base.BaseEntity;
+import ${basePackage}.base.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class ${entityName} extends BaseEntity{
+public class ${entityName}Do extends BaseEntity{
 <#list columns as column>
     <#if column.name != 'id' && column.name != 'is_delete' && column.name != 'create_time' && column.name != 'update_time' >
         <#if column.comment != ''>
