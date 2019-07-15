@@ -1,8 +1,8 @@
-package ${packageName}.service.impl;
+package ${basePackage}.service.impl;
 
-import ${packageName}.base.BaseServiceImpl;
-import ${packageName}.bean.${entityName};
-import ${packageName}.service.${entityName}Service;
+import ${basePackage}.base.BaseServiceImpl;
+import ${basePackage}.bean.${entityName};
+import ${basePackage}.service.${entityName}Service;
 import org.springframework.stereotype.Service;
 
 @Service
